@@ -18,6 +18,7 @@
 		79FB31061DC54735009E9872 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31051DC54735009E9872 /* RoundButton.swift */; };
 		79FB31081DC54980009E9872 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31071DC54980009E9872 /* RoundedTextField.swift */; };
 		79FB310A1DC55DA5009E9872 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31091DC55DA5009E9872 /* SignInVC.swift */; };
+		79FB310D1DC67B2D009E9872 /* FeedVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB310C1DC67B2D009E9872 /* FeedVCViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		79FB31071DC54980009E9872 /* RoundedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		79FB31091DC55DA5009E9872 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		79FB310B1DC669CB009E9872 /* DevChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevChat.entitlements; sourceTree = "<group>"; };
+		79FB310C1DC67B2D009E9872 /* FeedVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVCViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				79FB31091DC55DA5009E9872 /* SignInVC.swift */,
+				79FB310C1DC67B2D009E9872 /* FeedVCViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				79FB310A1DC55DA5009E9872 /* SignInVC.swift in Sources */,
 				79FB31021DC54518009E9872 /* BetterViews.swift in Sources */,
 				79FB30E91DC505AB009E9872 /* AppDelegate.swift in Sources */,
+				79FB310D1DC67B2D009E9872 /* FeedVCViewController.swift in Sources */,
 				79FB31041DC5459F009E9872 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
