@@ -19,6 +19,8 @@
 		79FB31081DC54980009E9872 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31071DC54980009E9872 /* RoundedTextField.swift */; };
 		79FB310A1DC55DA5009E9872 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31091DC55DA5009E9872 /* SignInVC.swift */; };
 		79FB310D1DC67B2D009E9872 /* FeedVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB310C1DC67B2D009E9872 /* FeedVCViewController.swift */; };
+		79FB310F1DC79888009E9872 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB310E1DC79888009E9872 /* CircleView.swift */; };
+		79FB31111DC7D591009E9872 /* RadiusedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31101DC7D591009E9872 /* RadiusedImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		79FB31091DC55DA5009E9872 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		79FB310B1DC669CB009E9872 /* DevChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevChat.entitlements; sourceTree = "<group>"; };
 		79FB310C1DC67B2D009E9872 /* FeedVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVCViewController.swift; sourceTree = "<group>"; };
+		79FB310E1DC79888009E9872 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		79FB31101DC7D591009E9872 /* RadiusedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusedImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				79FB31011DC54518009E9872 /* BetterViews.swift */,
 				79FB31051DC54735009E9872 /* RoundButton.swift */,
 				79FB31071DC54980009E9872 /* RoundedTextField.swift */,
+				79FB310E1DC79888009E9872 /* CircleView.swift */,
+				79FB31101DC7D591009E9872 /* RadiusedImage.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FB310F1DC79888009E9872 /* CircleView.swift in Sources */,
+				79FB31111DC7D591009E9872 /* RadiusedImage.swift in Sources */,
 				79FB31081DC54980009E9872 /* RoundedTextField.swift in Sources */,
 				79FB31061DC54735009E9872 /* RoundButton.swift in Sources */,
 				79FB310A1DC55DA5009E9872 /* SignInVC.swift in Sources */,
