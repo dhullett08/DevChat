@@ -23,7 +23,7 @@ class RoundButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 5.0
+        layer.cornerRadius = frame.width / 2
     }
     
 }

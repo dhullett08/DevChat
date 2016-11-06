@@ -98,7 +98,7 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNs-fK-CWZ" customClass="RoundButton" customModule="DevChat" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNs-fK-CWZ" customClass="SignInButton" customModule="DevChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="275" height="37"/>
                                         <color key="backgroundColor" red="0.098039215686274508" green="0.46274509803921571" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
@@ -194,25 +194,28 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wjz-Lo-OWW">
                                         <rect key="frame" x="8" y="8" width="327" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="3BS-9t-8er" customClass="RadiusedImage" customModule="DevChat" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="57" height="49"/>
+                                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="3BS-9t-8er" customClass="CircleView" customModule="DevChat" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.33036546527764271" green="0.64187420685279184" blue="0.3745923694962156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="57" id="JTW-zf-cBv"/>
+                                                    <constraint firstAttribute="width" constant="49" id="JTW-zf-cBv"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="UFA-GS-3qb" appends="YES" id="RJM-am-y56"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a Caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hl9-Ze-n5h">
-                                                <rect key="frame" x="67" y="0.0" width="193" height="49"/>
+                                                <rect key="frame" x="59" y="0.0" width="209" height="49"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffo-sh-dzM" customClass="RoundButton" customModule="DevChat" customModuleProvider="target">
-                                                <rect key="frame" x="270" y="0.0" width="57" height="49"/>
+                                                <rect key="frame" x="278" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.8784313725490196" green="0.36470588235294116" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="57" id="S1y-e6-PUo"/>
+                                                    <constraint firstAttribute="width" constant="49" id="S1y-e6-PUo"/>
                                                 </constraints>
                                                 <state key="normal" image="add-post"/>
                                             </button>
@@ -354,6 +357,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageAdd" destination="3BS-9t-8er" id="BDl-kA-ZMR"/>
                         <outlet property="tableView" destination="M1y-LE-vhE" id="evb-9K-3Ca"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="mMx-gW-bo5"/>
                     </connections>
@@ -362,6 +366,11 @@
                 <tapGestureRecognizer id="WRT-Lm-cIF">
                     <connections>
                         <action selector="signOut:" destination="WHU-p3-qYX" id="7re-AP-fUQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="UFA-GS-3qb">
+                    <connections>
+                        <action selector="addImageTapped:" destination="WHU-p3-qYX" id="0KL-XI-IKO"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
