@@ -59,7 +59,8 @@ class SignInVC: UIViewController {
             } else {
                 print("DUSTIN: Firebase is Authenticated")
                 if let user = user {
-                   self.completeSignIn(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
             }
         })
@@ -71,7 +72,8 @@ class SignInVC: UIViewController {
                 if error == nil {
                     print("DUSTIN: Sign in successful with email in firebase")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -80,7 +82,8 @@ class SignInVC: UIViewController {
                         } else {
                             print("DUSTIN: CREATED USER WITH EMAIL")
                             if let user = user {
-                            self.completeSignIn(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(id: user.uid, userData: userData)
                         }
                         }
                     })
@@ -90,10 +93,9 @@ class SignInVC: UIViewController {
         
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
         KeychainWrapper.standard.set(id, forKey: KEY_UID)
         performSegue(withIdentifier: "goToFeed", sender: nil)
+        DataService.ds.creatFirebaseDbUser(uid: id, userData: userData)
     }
-    
-    
 }

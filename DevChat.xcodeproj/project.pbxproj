@@ -22,6 +22,7 @@
 		79FB310F1DC79888009E9872 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB310E1DC79888009E9872 /* CircleView.swift */; };
 		79FB31111DC7D591009E9872 /* RadiusedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31101DC7D591009E9872 /* RadiusedImage.swift */; };
 		79FB31131DCD3FF6009E9872 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31121DCD3FF6009E9872 /* PostCell.swift */; };
+		79FB31161DCFCA39009E9872 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31151DCFCA39009E9872 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		79FB310E1DC79888009E9872 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		79FB31101DC7D591009E9872 /* RadiusedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusedImage.swift; sourceTree = "<group>"; };
 		79FB31121DCD3FF6009E9872 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		79FB31151DCFCA39009E9872 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		79FB30E71DC505AB009E9872 /* DevChat */ = {
 			isa = PBXGroup;
 			children = (
+				79FB31141DCFCA1E009E9872 /* Services */,
 				79FB310B1DC669CB009E9872 /* DevChat.entitlements */,
 				79FB30FA1DC505CC009E9872 /* Model */,
 				79FB30FB1DC505D2009E9872 /* View */,
@@ -147,6 +150,14 @@
 				79FB31031DC5459F009E9872 /* Constants.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		79FB31141DCFCA1E009E9872 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				79FB31151DCFCA39009E9872 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		F6A3C1AB30339974154E600F /* Frameworks */ = {
@@ -292,6 +303,7 @@
 				79FB31081DC54980009E9872 /* RoundedTextField.swift in Sources */,
 				79FB31061DC54735009E9872 /* RoundButton.swift in Sources */,
 				79FB310A1DC55DA5009E9872 /* SignInVC.swift in Sources */,
+				79FB31161DCFCA39009E9872 /* DataService.swift in Sources */,
 				79FB31021DC54518009E9872 /* BetterViews.swift in Sources */,
 				79FB30E91DC505AB009E9872 /* AppDelegate.swift in Sources */,
 				79FB310D1DC67B2D009E9872 /* FeedVCViewController.swift in Sources */,
