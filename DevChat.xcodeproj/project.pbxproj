@@ -21,6 +21,7 @@
 		79FB310D1DC67B2D009E9872 /* FeedVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB310C1DC67B2D009E9872 /* FeedVCViewController.swift */; };
 		79FB310F1DC79888009E9872 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB310E1DC79888009E9872 /* CircleView.swift */; };
 		79FB31111DC7D591009E9872 /* RadiusedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31101DC7D591009E9872 /* RadiusedImage.swift */; };
+		79FB31131DCD3FF6009E9872 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31121DCD3FF6009E9872 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		79FB310C1DC67B2D009E9872 /* FeedVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVCViewController.swift; sourceTree = "<group>"; };
 		79FB310E1DC79888009E9872 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		79FB31101DC7D591009E9872 /* RadiusedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusedImage.swift; sourceTree = "<group>"; };
+		79FB31121DCD3FF6009E9872 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				79FB31071DC54980009E9872 /* RoundedTextField.swift */,
 				79FB310E1DC79888009E9872 /* CircleView.swift */,
 				79FB31101DC7D591009E9872 /* RadiusedImage.swift */,
+				79FB31121DCD3FF6009E9872 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -189,7 +192,7 @@
 				TargetAttributes = {
 					79FB30E41DC505AB009E9872 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = JF363BN24A;
+						DevelopmentTeam = D2C9P3NG4C;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -293,6 +296,7 @@
 				79FB30E91DC505AB009E9872 /* AppDelegate.swift in Sources */,
 				79FB310D1DC67B2D009E9872 /* FeedVCViewController.swift in Sources */,
 				79FB31041DC5459F009E9872 /* Constants.swift in Sources */,
+				79FB31131DCD3FF6009E9872 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevChat/DevChat.entitlements;
-				DEVELOPMENT_TEAM = JF363BN24A;
+				DEVELOPMENT_TEAM = D2C9P3NG4C;
 				INFOPLIST_FILE = DevChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dustin-Hullett.DevChat";
@@ -430,7 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevChat/DevChat.entitlements;
-				DEVELOPMENT_TEAM = JF363BN24A;
+				DEVELOPMENT_TEAM = D2C9P3NG4C;
 				INFOPLIST_FILE = DevChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dustin-Hullett.DevChat";
