@@ -23,6 +23,7 @@
 		79FB31111DC7D591009E9872 /* RadiusedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31101DC7D591009E9872 /* RadiusedImage.swift */; };
 		79FB31131DCD3FF6009E9872 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31121DCD3FF6009E9872 /* PostCell.swift */; };
 		79FB31161DCFCA39009E9872 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31151DCFCA39009E9872 /* DataService.swift */; };
+		79FB31181DCFE1D6009E9872 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB31171DCFE1D6009E9872 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		79FB31101DC7D591009E9872 /* RadiusedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusedImage.swift; sourceTree = "<group>"; };
 		79FB31121DCD3FF6009E9872 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		79FB31151DCFCA39009E9872 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		79FB31171DCFE1D6009E9872 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		79FB30FA1DC505CC009E9872 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				79FB31171DCFE1D6009E9872 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				79FB310F1DC79888009E9872 /* CircleView.swift in Sources */,
 				79FB31111DC7D591009E9872 /* RadiusedImage.swift in Sources */,
 				79FB31081DC54980009E9872 /* RoundedTextField.swift in Sources */,
+				79FB31181DCFE1D6009E9872 /* Post.swift in Sources */,
 				79FB31061DC54735009E9872 /* RoundButton.swift in Sources */,
 				79FB310A1DC55DA5009E9872 /* SignInVC.swift in Sources */,
 				79FB31161DCFCA39009E9872 /* DataService.swift in Sources */,
