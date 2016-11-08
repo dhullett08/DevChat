@@ -14,12 +14,13 @@ import SwiftKeychainWrapper
 
 
 class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var imageAdd: RadiusedImage!
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,9 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         imagePicker.allowsEditing = true
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            
+            self.posts = []
+            
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     print("SNAP: \(snap)")
@@ -39,7 +43,6 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
                         self.posts.append(post)
-                        
                     }
                 }
             }
@@ -54,13 +57,20 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-
     
+   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let post = posts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
-            cell.configureCell(post: post)
+            
+            if let img = FeedVCViewController.imageCache.object(forKey: post.imageUrl as NSString) {
+                cell.configureCell(post: post, img: img)
+                return cell
+            } else {
+                cell.configureCell(post: post)
+            }
             return cell
         } else {
             return PostCell()
@@ -76,7 +86,7 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
-
+    
     @IBAction func addImageTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
     }
@@ -93,5 +103,5 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }
     
-
+    
 }

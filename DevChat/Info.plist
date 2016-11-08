@@ -56,5 +56,10 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need Access To your photos to post photos to DevChat! :)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
