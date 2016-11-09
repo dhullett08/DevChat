@@ -17,10 +17,12 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var imageAdd: RadiusedImage!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var postCaption: UITextField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +34,7 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         
-        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
-            
+        DataService.ds.REF_POSTS.queryOrdered(byChild: "date").observe(.value, with: { (snapshot) in
             self.posts = []
             
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -82,7 +83,15 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
+            imageSelected = true
+        } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageAdd.image = image
+            imageSelected = true
+        } else {
+            imageAdd.image = nil
         }
+        
+        
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
@@ -103,5 +112,60 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }
     
+    @IBAction func postBtnTapped(_ sender: Any) {
+        
+        guard let caption = postCaption.text, caption != "" else {
+            print("DUSTIN: Must Have A Caption To Post")
+            return
+        }
+        guard let img = imageAdd.image, imageSelected == true else {
+            print("DUSTIN: An image must be selected to make a post")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            let imgUID = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imgUID).put(imgData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print("DUSTIN: Unable to upload image to Firebase storage")
+                } else {
+                    print("DUSTIN: Image succesfully uploaded to firebase Storage")
+                    let downloadUrl = metadata?.downloadURL()?.absoluteString
+                    self.postToFirebase(imgUrl: downloadUrl!)
+                }
+                
+            }
+            
+        }
+    }
+    func postToFirebase(imgUrl: String) {
+        
+        let post: Dictionary<String, Any> = [
+            "caption": postCaption.text!,
+            "imageUrl": imgUrl,
+            "likes": 0,
+            "date": "\(Date.init())"
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        postCaption.text = ""
+        imageAdd.image = #imageLiteral(resourceName: "add-image")
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
